@@ -1,2 +1,2 @@
 # PlanningDomains
-This describes plannings domains for Planning Recognition Goal Algorithms
+This describes plannings domains and problems for Planning Recognition Goal Algorithms

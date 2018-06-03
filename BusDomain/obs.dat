@@ -1,6 +1,0 @@
-(board cidadao b1 s0)
-(travel cidadao b1 s0 s1)
-(leave cidadao b1 s1)
-(board cidadao b3 s1)
-(travel cidadao b3 s1 s3)
-(leave cidadao b3 s3)
