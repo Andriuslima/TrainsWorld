@@ -32,7 +32,7 @@ i = 0
 for line in lines:
     line_obj += line + " "
     for stop in lines_stops[line]:
-        if stop not in stop_obj:
+        if ' '+stop not in stop_obj:
             stop_obj += stop + " "
             i += 1
             if i%10 == 0: stop_obj += "- stop\n"
@@ -53,7 +53,7 @@ states.append('\n)\n')
 
 goal = ['\n(:goal (and\n']
 goal.append('\n(at '+PERSON+' '+GOAL_STOP+')\n')
-goal.append('(not (on-train holmes))\n')
+goal.append('(not (on-train '+PERSON+'))\n')
 goal.append('\n)\n)\n)\n')
 
 
