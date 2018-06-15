@@ -1,11 +1,11 @@
 import requests, json
 
-PATH = 'problems/'
+PATH = 'experiments/'
 PERSON = 'Holmes'
 PROBLEM = 'LondonTube'
 DOMAIN = 'TRAINS'
-INITIAL_STOP = 'paddington_underground_station'
-GOAL_STOP = 'oval_underground_station'
+INITIAL_STOP = 'watford_underground_station'
+GOAL_STOP = 'piccadilly_circus_underground_station'
 lines_stops = {}
 lines = []
 line_obj = ''
@@ -28,12 +28,15 @@ for l in raw_lines:
 
 
 
-
+i = 0
 for line in lines:
     line_obj += line + " "
     for stop in lines_stops[line]:
-        stop_obj += stop + " "
-    stop_obj += "- stop\n"
+        if stop not in stop_obj:
+            stop_obj += stop + " "
+            i += 1
+            if i%10 == 0: stop_obj += "- stop\n"
+stop_obj += "- stop\n"
 line_obj += '- line\n'
 
 

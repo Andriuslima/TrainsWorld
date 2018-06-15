@@ -17,7 +17,7 @@
         (at ?p - person ?s - stop)
         (traveling ?p - person ?l - line)
         (itinerary ?l - line ?s - stop)
-        (on-train ?p)
+        (on-train ?p - person)
     )
 
     (:action board
@@ -58,7 +58,6 @@
         )
         :effect (and 
             (not (traveling ?p ?l))
-            (at ?p ?s)
             (not (on-train ?p))
         )
     )
