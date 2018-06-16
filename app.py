@@ -4,8 +4,8 @@ PATH = 'experiments/'
 PERSON = 'Holmes'
 PROBLEM = 'LondonTube'
 DOMAIN = 'TRAINS'
-INITIAL_STOP = 'watford_underground_station'
-GOAL_STOP = 'piccadilly_circus_underground_station'
+INITIAL_STOP = 'watford'
+GOAL_STOP = 'piccadilly_circus'
 lines_stops = {}
 lines = []
 line_obj = ''
@@ -23,7 +23,7 @@ for l in raw_lines:
 
     lines_stops[line] = []
     for stops in response:
-        stop_cln = stops['commonName'].replace(' ', '_').replace('(', '').replace(')', '').replace('.', '').replace('&', 'E').replace('\'', '').lower()
+        stop_cln = stops['commonName'].replace(' Underground Station','').replace(' ', '_').replace('(', '').replace(')', '').replace('.', '').replace('&', 'E').replace('\'', '').lower()
         lines_stops[line].append(stop_cln)
 
 
@@ -32,10 +32,10 @@ i = 0
 for line in lines:
     line_obj += line + " "
     for stop in lines_stops[line]:
-        if ' '+stop not in stop_obj:
+        if ' '+stop+' ' not in stop_obj:
             stop_obj += stop + " "
             i += 1
-            if i%10 == 0: stop_obj += "- stop\n"
+            if i%10 == 0: stop_obj += "\n"
 stop_obj += "- stop\n"
 line_obj += '- line\n'
 
