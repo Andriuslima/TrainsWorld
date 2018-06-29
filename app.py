@@ -75,3 +75,13 @@ with open(PATH+PROBLEM+'.pddl', 'w') as file:
 #     print(line)
 #     for stop in lines_stops[line]:
 #         print("--> "+stop)
+
+print("=== INFOS ===")
+print('{:d} lines'.format(len(lines)))
+
+stops_numbers = 0
+for line in lines:
+    for stop in line:
+        stops_numbers += 1
+
+print('{:d} stops'.format(stops_numbers))
